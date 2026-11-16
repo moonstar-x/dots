@@ -25,7 +25,7 @@ Entry points in each instance directory:
 
 | Script                        | What it does                                                                                                   |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `setup.sh`                    | Installs Homebrew, Oh My Zsh, the Oh My Zsh plugins and the tmux plugins.                                      |
+| `setup.sh`                    | Installs Homebrew, Oh My Zsh, the Oh My Zsh plugins, the tmux plugins and the nvim config.                     |
 | `Brewfile`                    | Formulae, casks and Mac App Store apps for the machine (installed with `brew bundle`).                         |
 | `config.sh`                   | Symlinks the configs from `config/` that the machine uses.                                                     |
 | `setup-runtimes.sh`           | Installs the latest LTS Node.js through `nvm` and Python 3.13 through `pyenv`.                                 |
@@ -44,7 +44,7 @@ cd ~/dots/instances/<instance>
 Then run the steps in order:
 
 ```sh
-# 1. Homebrew, Oh My Zsh and plugins
+# 1. Homebrew, Oh My Zsh, plugins and nvim config
 bash setup.sh
 
 # 2. Restart your shell before. Install all packages.
