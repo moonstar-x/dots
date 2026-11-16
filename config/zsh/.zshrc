@@ -39,6 +39,9 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 zstyle ':omz:plugins:nvm' autoload yes
 zstyle ':omz:plugins:nvm' silent-autoload yes
 
+# Extra completion dirs go before oh-my-zsh so its compinit picks them up.
+fpath=($HOME/.docker/completions ~/.zfunc $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -68,7 +71,7 @@ lg() {
 alias lzg='lg'
 
 # lazyssh
-alias lzs='lazyssh'
+(( $+commands[lazyssh] )) && alias lzs='lazyssh'
 
 # superfile (cd into the dir superfile was in when it quit with cd_quit)
 spf() {
@@ -83,11 +86,11 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Cargo
-export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
-export PATH=$PATH:~/.cargo/bin/
+[[ -n "$HOMEBREW_PREFIX" ]] && export LIBRARY_PATH="$LIBRARY_PATH:$HOMEBREW_PREFIX/lib"
+[[ -d "$HOME/.cargo/bin" ]] && path+=("$HOME/.cargo/bin")
 
 # Go Binaries
-export PATH=$PATH:~/go/bin
+[[ -d "$HOME/go/bin" ]] && path+=("$HOME/go/bin")
 
 # uv Binaries
 export PATH=$PATH:~/.local/bin
@@ -99,11 +102,7 @@ eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
 
 # LM Studio
-export PATH="$PATH:~/.lmstudio/bin"
+[[ -d "$HOME/.lmstudio/bin" ]] && path+=("$HOME/.lmstudio/bin")
 
-# Docker Desktop
-fpath=($HOME/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
+# Postgres
+[[ -d "/opt/homebrew/opt/libpq/bin" ]] && path+=("/opt/homebrew/opt/libpq/bin")
