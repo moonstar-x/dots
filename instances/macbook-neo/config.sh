@@ -24,6 +24,7 @@ configs=(
   vscodium
   xcode
   zsh
+  zsh-fsh
 )
 
 for config in "${configs[@]}"; do
