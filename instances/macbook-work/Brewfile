@@ -11,6 +11,8 @@ brew "gh"
 
 # Language Runtimes
 brew "deno"
+brew "go"
+brew "rust"
 
 # Package Managers
 brew "uv"
@@ -21,13 +23,24 @@ brew "asdf"
 brew "nvm"
 brew "pyenv"
 
+# Neovim
+brew "neovim"
+brew "tmux"
+brew "tmux-mem-cpu-load"
+brew "fd"
+brew "fzf"
+brew "tree-sitter-cli"
+brew "ripgrep"
+brew "git-delta"
+brew "imagemagick"
+brew "ast-grep"
+brew "luarocks"
+
 # Tools
 brew "atuin"
 brew "bat"
 brew "btop"
 brew "eza"
-brew "fzf"
-brew "ripgrep"
 brew "fastfetch"
 
 # Development Tools
@@ -42,8 +55,10 @@ brew "yt-dlp"
 tap "jesseduffield/lazydocker", trusted: true
 brew "jesseduffield/lazydocker/lazydocker"
 brew "lazygit"
+brew "superfile"
 tap "gromgit/brewtils", trusted: true
 brew "gromgit/brewtils/taproom"
+brew "posting"
 
 # Customization
 brew "starship"
