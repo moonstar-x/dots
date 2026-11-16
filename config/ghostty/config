@@ -1,0 +1,28 @@
+font-family = JetBrainsMono NFM Regular
+font-size = 13
+theme = Catppuccin Macchiato
+cursor-style = block
+background-opacity = 1
+background-blur = false
+
+split-divider-color = #EEEEEE
+unfocused-split-opacity = 0.97
+
+window-height = 25
+window-width = 80
+window-new-tab-position = end
+quick-terminal-position = center
+quick-terminal-size = 800px,600px
+
+macos-option-as-alt = left
+
+# Every window opens in tmux, attaching to the "main" session (created if missing).
+command = /opt/homebrew/bin/tmux -u new-session -A -s main
+
+keybind = cmd+shift+t=toggle_quick_terminal
+
+# tmux shortcuts: send the C-Space prefix (\x00) followed by the tmux key.
+keybind = cmd+t=text:\x00c
+keybind = cmd+d=text:\x00|
+keybind = cmd+shift+d=text:\x00-
+keybind = cmd+w=text:\x00x

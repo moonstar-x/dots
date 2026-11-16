@@ -1,0 +1,6 @@
+--theme="Catppuccin Macchiato"
+--style="numbers,changes,header"
+--italic-text=always
+--map-syntax=".gitignore_global:Git Ignore"
+--map-syntax="**/ghostty/config:INI"
+--map-syntax="*.conf:INI"

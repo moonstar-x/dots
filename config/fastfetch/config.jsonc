@@ -1,0 +1,89 @@
+// Catppuccin Macchiato
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "builtin",
+    "padding": {
+      "top": 1,
+      "left": 2,
+      "right": 4
+    },
+    "color": {
+      "1": "#a6da95",
+      "2": "#eed49f",
+      "3": "#f5a97f",
+      "4": "#ed8796",
+      "5": "#c6a0f6",
+      "6": "#8aadf4"
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "#c6a0f6",
+      "title": "#c6a0f6",
+      "output": "#cad3f5",
+      "separator": "#6e738d"
+    },
+    "key": {
+      "width": 12
+    },
+    "bar": {
+      "char": {
+        "elapsed": "■",
+        "total": "■"
+      },
+      "color": {
+        "elapsed": "#c6a0f6",
+        "total": "#494d64",
+        "border": "#6e738d"
+      }
+    },
+    "percent": {
+      "type": 9,
+      "color": {
+        "green": "#a6da95",
+        "yellow": "#eed49f",
+        "red": "#ed8796"
+      }
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "color": {
+        "user": "#c6a0f6",
+        "at": "#6e738d",
+        "host": "#8aadf4"
+      }
+    },
+    {
+      "type": "separator",
+      "string": "─",
+      "outputColor": "#6e738d"
+    },
+    { "type": "os", "key": "󰀵 OS", "keyColor": "#ed8796" },
+    { "type": "host", "key": "󰌢 Host", "keyColor": "#ee99a0" },
+    { "type": "kernel", "key": "󰒓 Kernel", "keyColor": "#f5a97f" },
+    { "type": "uptime", "key": "󰅐 Uptime", "keyColor": "#eed49f" },
+    { "type": "packages", "key": "󰏖 Packages", "keyColor": "#a6da95" },
+    { "type": "shell", "key": "󰞷 Shell", "keyColor": "#8bd5ca" },
+    { "type": "terminal", "key": "󰆍 Terminal", "keyColor": "#91d7e3" },
+    { "type": "terminalfont", "key": "󰛖 Font", "keyColor": "#7dc4e4" },
+    { "type": "cpu", "key": "󰘚 CPU", "keyColor": "#8aadf4" },
+    { "type": "gpu", "key": "󰢮 GPU", "keyColor": "#b7bdf8" },
+    { "type": "display", "key": "󰍹 Display", "keyColor": "#c6a0f6" },
+    { "type": "memory", "key": "󰍛 Memory", "keyColor": "#f5bde6" },
+    { "type": "swap", "key": "󰓡 Swap", "keyColor": "#f5bde6" },
+    { "type": "disk", "key": "󰋊 Disk", "keyColor": "#f0c6c6", "folders": "/" },
+    { "type": "battery", "key": "󰁹 Battery", "keyColor": "#f4dbd6" },
+    { "type": "poweradapter", "key": "󰚥 Power", "keyColor": "#f4dbd6" },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 0
+    }
+  ]
+}

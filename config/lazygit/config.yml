@@ -1,0 +1,77 @@
+gui:
+  nerdFontsVersion: '3'
+  showRandomTip: false
+  showCommandLog: false
+  showDivergenceFromBaseBranch: arrowAndNumber
+  expandFocusedSidePanel: true
+  showNumstatInFilesView: true
+  timeFormat: '2006-01-02'
+  shortTimeFormat: '15:04'
+  theme:
+    activeBorderColor:
+      - '#c6a0f6'
+      - bold
+    inactiveBorderColor:
+      - '#a5adcb'
+    searchingActiveBorderColor:
+      - '#eed49f'
+    optionsTextColor:
+      - '#8aadf4'
+    selectedLineBgColor:
+      - '#363a4f'
+    inactiveViewSelectedLineBgColor:
+      - '#6e738d'
+    cherryPickedCommitFgColor:
+      - '#c6a0f6'
+    cherryPickedCommitBgColor:
+      - '#494d64'
+    markedBaseCommitFgColor:
+      - '#8aadf4'
+    markedBaseCommitBgColor:
+      - '#eed49f'
+    unstagedChangesColor:
+      - '#ed8796'
+    defaultFgColor:
+      - '#cad3f5'
+    authorColors:
+      '*': '#b7bdf8'
+    branchColorPatterns:
+      '^(main|master)$': '#a6da95'
+      '^feat/': '#8aadf4'
+      '^fix/': '#ed8796'
+git:
+  diffRenderers:
+    - type: stdinFilter
+      command: delta --dark --paging=never --syntax-theme='Catppuccin Macchiato'
+  mainBranches:
+    - main
+    - master
+  autoForwardBranches: onlyMainBranches
+  parseEmoji: true
+  log:
+    showGraph: always
+  # Pre-fill the commit message with a ticket ID from branches like feat/ABC-123-thing.
+  commitPrefix:
+    - pattern: '^\w+\/([A-Z]+-\d+).*'
+      replace: '[$1] '
+os:
+  editPreset: nvim
+customCommands:
+  - key: '<ctrl+k>'
+    context: files
+    description: Conventional commit
+    prompts:
+      - type: menu
+        key: Type
+        title: Type
+        options:
+          - value: feat
+          - value: fix
+          - value: chore
+          - value: docs
+          - value: refactor
+      - type: input
+        key: Msg
+        title: Message
+    command: 'git commit -m "{{.Form.Type}}: {{.Form.Msg}}"'
+promptToReturnFromSubprocess: false
