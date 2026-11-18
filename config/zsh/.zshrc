@@ -8,9 +8,13 @@ zstyle ':omz:update' frequency 14
 HIST_STAMPS="dd/mm/yyyy"
 
 # Load Pyenv here first before loading the plugins.
+# Skipped inside an active virtualenv so the shims don't get pushed ahead of it
+# (same guard the oh-my-zsh pyenv plugin uses).
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+if [[ -z "${VIRTUAL_ENV:-}" ]]; then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
+fi
 
 # Custom before loading the plugins.
 source "$HOME/.zsh/fzf.sh"
